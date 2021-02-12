@@ -2,10 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/hof/layout"
+import Head from "../components/head/head"
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Head title="Home"/>
       <h1>Hello,</h1>
       <h2>I am Ashish, a full-stack developer</h2>
       <p>

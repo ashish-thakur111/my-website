@@ -7,6 +7,7 @@ import * as propTypes from "prop-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import Layout from "../components/hof/layout"
+import Head from "../components/head/head"
 
 // export const query = graphql`
 //   query($slug: String!) {
@@ -35,6 +36,7 @@ const Blog = props => {
   const body = props.data.contentfulBlogPost.body
   return (
     <Layout>
+      <Head title={title} />
       <h1>{title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
       {/* use in case of markdown */}
