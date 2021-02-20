@@ -15,6 +15,13 @@ const BlogPage = () => {
             title
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
+            description
+            blogPic {
+              title
+              file {
+                url
+              }
+            }
           }
         }
       }
@@ -29,12 +36,13 @@ const BlogPage = () => {
           return (
             <li className={blogStyles.post}>
               <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={edge.node.blogPic.file.url} alt={edge.node.blogPic.title} />
                 <Card.Body>
                   <Card.Title>{edge.node.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
                     {edge.node.publishedDate}
                   </Card.Subtitle>
+                  <Card.Text>{edge.node.description}</Card.Text>
                   <Link to={`/blog/${edge.node.slug}`}>
                     <Button variant="primary">Read more</Button>
                   </Link>
