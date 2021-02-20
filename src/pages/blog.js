@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import { Card, Button } from "react-bootstrap"
 
 import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
@@ -21,16 +22,24 @@ const BlogPage = () => {
   `)
   return (
     <Layout>
-      <Head title="Blog" /> 
+      <Head title="Blog" />
       <h1>Blog</h1>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map(edge => {
           return (
             <li className={blogStyles.post}>
-              <Link to={`/blog/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-                <p>{edge.node.publishedDate}</p>
-              </Link>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>{edge.node.title}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {edge.node.publishedDate}
+                  </Card.Subtitle>
+                  <Link to={`/blog/${edge.node.slug}`}>
+                    <Button variant="primary">Read more</Button>
+                  </Link>
+                </Card.Body>
+              </Card>
             </li>
           )
         })}
