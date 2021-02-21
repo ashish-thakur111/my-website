@@ -1,6 +1,6 @@
 .posts {
     list-style-type: none;
-    margin: 0;
+    padding: 0;
 }
 
 .post {
@@ -9,4 +9,13 @@
     h2 {
         margin-bottom: 0;
     }
+}
+
+.pic {
+    width: 18rem;
+    height: 12rem;
+}
+
+h2 {
+    margin-left: 1.5%;
 }

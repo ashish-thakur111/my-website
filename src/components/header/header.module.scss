@@ -1,6 +1,9 @@
-.navbar {
-    max-width: auto;
-    Link {
-        text-decoration: none;
-    }
+.navbar-fixed {
+  left: 200px;
+  /* just an estimate of your sidebar's width */
+  width: calc(100% - 200px);
+}
+
+.active-nav-item {
+  color: #333333;
 }
