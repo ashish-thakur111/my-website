@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 
 import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
@@ -18,7 +18,17 @@ const IndexPage = () => {
             <h1>Hello,</h1>
             <h2>I am Ashish, a full-stack developer!</h2>
           </Col>
-          <Col>Hey there!</Col>
+          <Col>
+            <div class="text-center">
+              <Image
+                src="ashish.jpg"
+                alt="ashish"
+                roundedCircle
+                fluid
+                className={IndexStyles.pic}
+              />
+            </div>
+          </Col>
         </Row>
       </Container>
       <p className="container">

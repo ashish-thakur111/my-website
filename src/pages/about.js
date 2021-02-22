@@ -9,7 +9,7 @@ const About = () => {
   return (
     <Layout>
       <Head title="About" />
-      <Container>
+      <Container style={{ marginTop: "10px" }}>
         <strong>
           <h2 style={{ margin: "0px 0px 16px" }}>About me</h2>
         </strong>

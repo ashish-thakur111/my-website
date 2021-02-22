@@ -32,7 +32,7 @@ const BlogPage = () => {
       <Head title="Blog" />
       <Container>
         <strong>
-          <h2>Blog</h2>
+          <h2 style={{ marginTop: "10px" }}>Blog</h2>
         </strong>
         <ol className={blogStyles.posts}>
           {data.allContentfulBlogPost.edges.map(edge => {

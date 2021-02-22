@@ -7,8 +7,8 @@ import formStyles from "./contact.module.scss"
 
 const ContactForm = () => (
   <Layout>
-    <Container>
-      <Head title="Contact" />
+    <Head title="Contact" />
+    <Container className={formStyles.contact}>
       <Form action="https://formspree.io/f/xeqpwqna" method="post">
         <Form.Group>
           <Form.Label>Name</Form.Label>
