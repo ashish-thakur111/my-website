@@ -9,7 +9,7 @@ const Layout = props => {
     <div>
       <Header />
         {props.children}
-      <Footer template={props.template}/>
+      <Footer template={props.template} index={props.index} />
     </div>
   )
 }

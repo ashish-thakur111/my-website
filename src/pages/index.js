@@ -1,21 +1,25 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Container } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
-import EmpCard from "../components/card/card"
+import ImageCarousel from "../components/carousel/carousel"
+import IndexStyles from "./index.module.scss"
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout index="true">
       <Head title="Home" />
-      <Container>
-        <h1>Hello,</h1>
-        <h2>I am Ashish, a full-stack developer</h2>
-      </Container>
-      <Container>
-        <EmpCard />
+      <ImageCarousel />
+      <Container fluid>
+        <Row>
+          <Col className={IndexStyles.col}>
+            <h1>Hello,</h1>
+            <h2>I am Ashish, a full-stack developer!</h2>
+          </Col>
+          <Col>Hey there!</Col>
+        </Row>
       </Container>
       <p className="container">
         Need a developer? <Link to="/contact">Contact me</Link>
