@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import * as propTypes from "prop-types"
-import { Container } from "react-bootstrap"
 
 // Import the new rendering and the render node definitions
 import { renderRichText } from "gatsby-source-contentful/rich-text"
@@ -38,7 +37,7 @@ const Blog = props => {
   return (
     <Layout template="true">
       <Head title={title} />
-      <Container>
+      <div>
         <h1>{title}</h1>
         <p>{props.data.contentfulBlogPost.publishedDate}</p>
         {/* use in case of markdown */}
@@ -47,7 +46,7 @@ const Blog = props => {
       /> */}
         {/* Render the Rich Text field data: */}
         {body && renderRichText(body, options)}
-      </Container>
+      </div>
     </Layout>
   )
 }

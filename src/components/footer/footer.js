@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
+import SocialFollow from "../socialFollow/social"
+
 import footerStyles from "./footer.module.scss"
 
 const Footer = props => {
@@ -25,6 +27,7 @@ const Footer = props => {
       <div className="container" className={footerStyles.spanCenter}>
         <span style={{ color: "white" }}>
           Created by {data.site.siteMetadata.description}, &copy; 2021
+          <SocialFollow />
         </span>
       </div>
     </footer>

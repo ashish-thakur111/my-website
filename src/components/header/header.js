@@ -1,8 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { Navbar, Nav, Container } from "react-bootstrap"
 
-import Styles from "./header.module.scss"
+import headerStyles from "./header.module.scss"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -16,30 +15,53 @@ const Header = () => {
   `)
 
   return (
-    <Container>
-      <Navbar bg="primary" expand="md" fixed="top" variant="dark">
-        <Navbar.Brand as={Link} to="/">
+    <header className={headerStyles.header}>
+      <h2 className={headerStyles.title}>
+        <Link to="/" className={headerStyles.title}>
           {data.site.siteMetadata.title}
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/">
+        </Link>
+      </h2>
+      <nav>
+        <ul className={headerStyles.navList}>
+          <li>
+            <Link
+              to="/"
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+            >
               Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/blog">
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/blog"
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+            >
               Blog
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about">
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+            >
               About
-            </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+            >
               Contact
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </Container>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   )
 }
 

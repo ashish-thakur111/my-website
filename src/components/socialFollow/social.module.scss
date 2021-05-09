@@ -1,0 +1,26 @@
+li:hover {
+    transform: translateY(-2px);
+}
+
+li {
+    margin: 0 20px;
+    list-style: none;
+    transition: transform 250ms;
+    display: inline-block;
+}
+
+.linked-in {
+    color: #0a66c2 !important;
+}
+
+.facebook {
+    color: #4968ad !important;
+}
+
+.twitter {
+    color: #49a1eb !important;
+}
+
+.instagram {
+    color: red;
+}

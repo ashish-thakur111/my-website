@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { Card, Button, Container } from "react-bootstrap"
+import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
-import blogStyles from "./blog.module.scss"
+import CardItem from "../components/cardItem/cardItem"
+import cardStyles from "../components/cardItem/cardItem.module.scss"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -30,37 +30,32 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
-      <Container>
-        <strong>
-          <h2 style={{ marginTop: "10px" }}>Blog</h2>
-        </strong>
-        <ol className={blogStyles.posts}>
-          {data.allContentfulBlogPost.edges.map(edge => {
-            return (
-              <li className={blogStyles.post}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={edge.node.blogPic.file.url}
-                    alt={edge.node.blogPic.title}
-                    className={blogStyles.pic}
-                  />
-                  <Card.Body>
-                    <Card.Title>{edge.node.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">
-                      {edge.node.publishedDate}
-                    </Card.Subtitle>
-                    <Card.Text>{edge.node.description}</Card.Text>
-                    <Link to={`/blog/${edge.node.slug}`}>
-                      <Button variant="primary">Read more</Button>
-                    </Link>
-                  </Card.Body>
-                </Card>
-              </li>
-            )
-          })}
-        </ol>
-      </Container>
+      <div
+        style={{
+          margin: "20px 184px",
+          justifyContent: "flex-start",
+          display: "flex",
+        }}
+      >
+        <h2>Blog</h2>
+      </div>
+      <div className={cardStyles.cardsContainer}>
+        <div className={cardStyles.cardsContainer}>
+          <ul className={cardStyles.cardsItems}>
+            {data.allContentfulBlogPost.edges.map(edge => {
+              return (
+                <CardItem
+                  src={edge.node.blogPic.file.url}
+                  text={edge.node.description}
+                  label={edge.node.blogPic.title}
+                  path={`/blog/${edge.node.slug}`}
+                  date={edge.node.publishedDate}
+                />
+              )
+            })}
+          </ul>
+        </div>
+      </div>
     </Layout>
   )
 }

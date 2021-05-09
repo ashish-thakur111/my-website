@@ -1,0 +1,68 @@
+h1 {
+    display: table;
+    margin: 40px auto;
+    color: #fff;
+    font: 30px Poppins;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+form {
+    display: table;
+    margin: 40px auto;
+
+    input,
+    textarea {
+        font: 18px Poppins, Arial, sans-serif;
+        box-sizing: border-box;
+        display: block;
+        border: 1px solid;
+        border-radius: 4px;
+        border-color: #0e82d4;
+        padding: 20px;
+        width: 900px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+
+        &::placeholder {
+            transition: all 0.2s ease-in-out;
+            color: rgb(51, 48, 48);
+            font: 18px Poppins, Arial, sans-serif;
+        }
+
+        &:focus,
+        &.populated {
+            padding-top: 28px;
+            padding-bottom: 12px;
+            border-width: 3px;
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    button {
+        transition: all 0.2s ease-in-out;
+        font: 18px Poppins, Arial, sans-serif;
+        border: none;
+        background: rgb(19, 18, 18);
+        color: #fff;
+        padding: 20px;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        &:hover {
+            background: rgb(54, 52, 52);
+            cursor: pointer;
+        }
+    }
+}
