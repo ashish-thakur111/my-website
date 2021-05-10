@@ -5,9 +5,10 @@ import * as propTypes from "prop-types"
 
 // Import the new rendering and the render node definitions
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { BLOCKS, INLINES } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
 import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
+import blogStyles from "./blog.module.scss"
 
 // export const query = graphql`
 //   query($slug: String!) {
@@ -21,8 +22,18 @@ import Head from "../components/head/head"
 //   }
 // `
 
+const Bold = ({ children }) => <span className="bold">{children}</span>
+
 const options = {
+  renderMark: {
+    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+  },
+  renderText: text =>
+    text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
   renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <p className={blogStyles.para}>{children}</p>
+    ),
     [INLINES.ENTRY_HYPERLINK]: ({
       data: {
         target: { slug, title },
@@ -31,21 +42,27 @@ const options = {
     [BLOCKS.EMBEDDED_ASSET]: node => <Img {...node.data.target} />,
   },
 }
+
+// Render richTextResponse.json to the DOM using
+// documentToReactComponents from "@contentful/rich-text-react-renderer"
 const Blog = props => {
   const title = props.data.contentfulBlogPost.title
-  const body = props.data.contentfulBlogPost.body
+  const bodyRichText = props.data.contentfulBlogPost.body
   return (
     <Layout template="true">
       <Head title={title} />
-      <div>
-        <h1>{title}</h1>
-        <p>{props.data.contentfulBlogPost.publishedDate}</p>
-        {/* use in case of markdown */}
-        {/* <div
-        dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-      /> */}
-        {/* Render the Rich Text field data: */}
-        {body && renderRichText(body, options)}
+      <div className={blogStyles.container}>
+        <header>
+          <h1 itemProp="headline" className={blogStyles.head}>
+            {title}
+          </h1>
+          <p className={blogStyles.date}>
+            {props.data.contentfulBlogPost.publishedDate}
+          </p>
+        </header>
+        <section itemProp="articleBody" className={blogStyles.section}>
+          {bodyRichText && renderRichText(bodyRichText, options)}
+        </section>
       </div>
     </Layout>
   )
@@ -69,8 +86,13 @@ export const pageQuery = graphql`
           contentful_id
           __typename
           ... on ContentfulAsset {
-            fluid(maxWidth: 1200) {
-              ...GatsbyContentfulFluid_withWebp
+            contentful_id
+            __typename
+            fixed(width: 500, height: 350) {
+              width
+              height
+              src
+              srcSet
             }
           }
         }
