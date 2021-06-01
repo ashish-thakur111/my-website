@@ -25,10 +25,11 @@ const Header = () => {
   }
 
   useEffect(() => {
-    showButton()
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", showButton) 
+      showButton()
+    }
   }, [])
-
-  window.addEventListener("resize", showButton)
 
   return (
     <header className={headerStyles.header}>
