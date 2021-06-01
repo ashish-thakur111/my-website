@@ -13,7 +13,7 @@ function cardItem(props) {
           >
             <img
               className={cardStyles.cardsItemImg}
-              alt="Travel Image"
+              alt={props.label}
               src={props.src}
             />
           </figure>
