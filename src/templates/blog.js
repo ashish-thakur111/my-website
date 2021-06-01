@@ -4,8 +4,8 @@ import Img from "gatsby-image"
 import * as propTypes from "prop-types"
 
 // Import the new rendering and the render node definitions
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
 import blogStyles from "./blog.module.scss"
@@ -27,19 +27,21 @@ const Bold = ({ children }) => <span className="bold">{children}</span>
 const options = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    [MARKS.ITALIC]: text => <i>{text}</i>,
+    [MARKS.UNDERLINE]: text => <u>{text}</u>,
   },
   renderText: text =>
     text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
+
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => (
-      <p className={blogStyles.para}>{children}</p>
-    ),
     [INLINES.ENTRY_HYPERLINK]: ({
       data: {
         target: { slug, title },
       },
     }) => <Link to={slug}>{title}</Link>,
-    [BLOCKS.EMBEDDED_ASSET]: node => <Img {...node.data.target} />,
+    [BLOCKS.EMBEDDED_ASSET]: node => (
+      <Img {...node.data.target} key={node.data.id} />
+    ),
   },
 }
 

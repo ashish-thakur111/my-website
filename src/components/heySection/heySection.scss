@@ -16,6 +16,14 @@ video {
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
+    
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
 }
 
 .hey-container>h1 {

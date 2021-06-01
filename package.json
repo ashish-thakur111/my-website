@@ -28,6 +28,7 @@
     "gatsby-source-contentful": "^4.6.0",
     "gatsby-source-filesystem": "^2.11.0",
     "gatsby-transformer-remark": "^2.16.0",
+    "google-map-react": "^2.1.9",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

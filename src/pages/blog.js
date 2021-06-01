@@ -46,6 +46,7 @@ const BlogPage = () => {
               return (
                 <CardItem
                   src={edge.node.blogPic.file.url}
+                  key={edge.node.slug}
                   text={edge.node.description}
                   label={edge.node.blogPic.title}
                   path={`/blog/${edge.node.slug}`}
