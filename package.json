@@ -25,7 +25,7 @@
     "gatsby-plugin-react-leaflet": "^3.0.2",
     "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^2.14.0",
-    "gatsby-remark-images": "^3.11.0",
+    "gatsby-remark-images": "^3.11.1",
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-contentful": "^4.6.0",
     "gatsby-source-filesystem": "^2.11.0",
