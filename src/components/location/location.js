@@ -8,17 +8,19 @@ const Location = props => {
     parseFloat(props.address.lat),
     parseFloat(props.address.lng),
   ]
-  return (
-    <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={position}>
-        <Popup>Ashish Thakur</Popup>
-      </Marker>
-    </MapContainer>
-  )
+  if (typeof window !== "undefined") {
+    return (
+      <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>Ashish Thakur</Popup>
+        </Marker>
+      </MapContainer>
+    )
+  }
 }
 
 export default Location
