@@ -4,6 +4,7 @@ import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
 import HeySection from "../components/heySection/heySection"
 import Location from "../components/location/location"
+import Svg from "../../static/svg-1.svg"
 
 import indexStyles from "./index.module.scss"
 
@@ -13,15 +14,22 @@ const IndexPage = () => {
       <Head title="Home" />
       <HeySection />
       <div className={indexStyles.container}>
-        <div className={indexStyles.ash}>ashish</div>
-        <div className={indexStyles.photo}>ashish's photo</div>
-        <div className={indexStyles.map}>
-          <Location
-            googleMapsApiKey={process.env.G_MAPS_API_KEY}
-            address={{ lat: 32.06704, lng: 76.696158 }}
-          />
+        <div className={indexStyles.dev}>
+          <img src={Svg} alt="dev" className={indexStyles.svg} />
+        </div>
+        <div className={indexStyles.ash}>
+          Tech Stack
+          <ul>
+            <li>Java</li>
+            <li>Kubernetes</li>
+            <li>Linux</li>
+          </ul>
         </div>
       </div>
+      <Location
+        address={{ lat: 32.06704, lng: 76.696158 }}
+        sty={indexStyles.map}
+      />
     </Layout>
   )
 }

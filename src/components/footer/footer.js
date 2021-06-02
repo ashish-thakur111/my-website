@@ -24,11 +24,9 @@ const Footer = props => {
           : footerStyles.footer
       }
     >
-      <div className={footerStyles.spanCenter}>
-        <span style={{ color: "white" }}>
-          Created by {data.site.siteMetadata.description}, &copy; 2021
-          <SocialFollow />
-        </span>
+      <div>
+        Created by {data.site.siteMetadata.description}, &copy; 2021
+        <SocialFollow />
       </div>
     </footer>
   )

@@ -1,28 +1,23 @@
 import React from "react"
-import GoogleMapReact from "google-map-react"
-import { Marker } from "../marker/marker"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 
-const isClient = typeof window !== "undefined"
+import "./location.scss"
 
 const Location = props => {
-  const { address, googleMapsApiKey } = props
-  const lat = parseFloat(address.lat)
-  const lng = parseFloat(address.lng)
+  const position = [
+    parseFloat(props.address.lat),
+    parseFloat(props.address.lng),
+  ]
   return (
-    <div style={{ height: "400px", width: "100%" }}>
-      {isClient && (
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: googleMapsApiKey }}
-          defaultCenter={{
-            lat: lat,
-            lng: lng,
-          }}
-          defaultZoom={12}
-        >
-          <Marker lat={lat} lng={lng} text={"Ashish Thakur"} />
-        </GoogleMapReact>
-      )}
-    </div>
+    <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+      <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={position}>
+        <Popup>Ashish Thakur</Popup>
+      </Marker>
+    </MapContainer>
   )
 }
 

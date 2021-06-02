@@ -1,0 +1,10 @@
+@import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
+
+.leaflet-container {
+  height: 300px;
+  width: 100%;
+  z-index: 0;
+  @media screen and (min-width: 1024px) {
+    height: 350px;
+  }
+}
