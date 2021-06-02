@@ -26,7 +26,7 @@ const Header = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("resize", showButton) 
+      window.addEventListener("resize", showButton)
       showButton()
     }
   }, [])
@@ -51,8 +51,10 @@ const Header = () => {
         <div
           className={headerStyles.navbarLinks}
           style={
-            window.innerWidth <= 720
-              ? { display: toggleButton ? "flex" : "none" }
+            typeof window !== "undefined"
+              ? window.innerWidth <= 720
+                ? { display: toggleButton ? "flex" : "none" }
+                : { visibility: "visible" }
               : { visibility: "visible" }
           }
         >
