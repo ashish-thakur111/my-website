@@ -20,6 +20,8 @@ const Location = props => {
         </Marker>
       </MapContainer>
     )
+  } else {
+    return null
   }
 }
 
