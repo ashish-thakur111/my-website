@@ -1,76 +1,67 @@
 form {
-    display: table;
-    margin: 40px auto;
+  display: table;
+  margin: 40px auto;
 
-    input,
-    textarea {
-        font: 18px Poppins, Arial, sans-serif;
-        box-sizing: border-box;
-        display: block;
-        border: 1px solid;
-        border-radius: 4px;
-        border-color: #0e82d4;
-        padding: 20px;
-        width: 700px;
-        margin-bottom: 20px;
-        font-size: 18px;
-        outline: none;
-        transition: all 0.2s ease-in-out;
+  input,
+  textarea {
+    font: 18px Poppins, Arial, sans-serif;
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #0e82d4;
+    padding: 20px;
+    width: 60vw;
+    margin-bottom: 20px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
 
-        &::placeholder {
-            transition: all 0.2s ease-in-out;
-            color: rgb(51, 48, 48);
-            font: 18px Poppins, Arial, sans-serif;
-        }
-
-        &:focus,
-        &.populated {
-            padding-top: 28px;
-            padding-bottom: 12px;
-            border-width: 3px;
-
-            &::placeholder {
-                color: transparent;
-            }
-        }
+    &::placeholder {
+      transition: all 0.2s ease-in-out;
+      color: rgb(51, 48, 48);
+      font: 18px Poppins, Arial, sans-serif;
     }
 
-    textarea {
-        height: 200px;
-    }
+    &:focus,
+    &.populated {
+      padding-top: 28px;
+      padding-bottom: 12px;
+      border-width: 3px;
 
-    button {
-        transition: all 0.2s ease-in-out;
-        font: 18px Poppins, Arial, sans-serif;
-        border: none;
-        background: rgb(19, 18, 18);
-        color: #fff;
-        padding: 20px;
-        width: 100%;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-
-        &:hover {
-            background: rgb(54, 52, 52);
-            cursor: pointer;
-        }
+      &::placeholder {
+        color: transparent;
+      }
     }
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  button {
+    transition: all 0.2s ease-in-out;
+    font: 18px Poppins, Arial, sans-serif;
+    border: none;
+    background: rgb(19, 18, 18);
+    color: #fff;
+    padding: 20px;
+    width: 60vw;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    &:hover {
+      background: rgb(54, 52, 52);
+      cursor: pointer;
+    }
+  }
 }
 
 @media (max-width: 720px) {
-    form {
-        input,
-        textarea {
-            width: 480px;
-        }
+  form {
+    input,
+    textarea {
+      width: 60vw;
     }
-}
-
-@media (max-width: 500px) {
-    form {
-        input,
-        textarea {
-            width: 360px;
-        }
-    }
+  }
 }
