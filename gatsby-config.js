@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-leaflet",
       options: {
-        linkStyles: true,
+        linkStyles: false,
       },
     },
   ],
