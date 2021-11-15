@@ -1,21 +1,33 @@
 .posts {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .post {
-    margin: 1rem 1rem;
-    display: inline-flex;
-    h2 {
-        margin-bottom: 0;
-    }
+  margin: 1rem 1rem;
+  display: inline-flex;
+  h2 {
+    margin-bottom: 0;
+  }
 }
 
 .pic {
-    width: 18rem;
-    height: 12rem;
+  width: 18rem;
+  height: 12rem;
 }
 
-h2 {
-    margin-left: 1.5%;
+.title {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+  margin: 30px 185px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin: 30px 35px;
+  }
 }

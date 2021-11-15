@@ -5,6 +5,7 @@ import Layout from "../components/hof/layout"
 import Head from "../components/head/head"
 import CardItem from "../components/cardItem/cardItem"
 import cardStyles from "../components/cardItem/cardItem.module.scss"
+import blogStyles from "./blog.module.scss";
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -30,14 +31,14 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
-      <div
-        style={{
-          margin: "20px 184px",
-          justifyContent: "flex-start",
-          display: "flex",
-        }}
-      >
+      <div className={blogStyles.title}>
         <h2>Blog</h2>
+        <h3>
+          <a href="https://ashish-thakur07.github.io" style={{
+            textDecoration: "none",
+            color: "dark blue"
+          }}><span>Take me to techincal blog!</span></a>
+        </h3>
       </div>
       <div className={cardStyles.cardsContainer}>
         <div className={cardStyles.cardsContainer}>
