@@ -6,12 +6,12 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons"
-import socialStyles from "./social.module.scss"
+import * as socialStyles from "./social.module.scss"
 
 export default function SocialFollow() {
   return (
     <div>
-      <ul>
+      <ul className="tranform">
         <li>
           <a
             href="https://www.linkedin.com/in/ashish-thakur111"

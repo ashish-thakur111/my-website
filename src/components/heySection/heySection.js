@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons"
 
 import { Button } from "../button/button"
-
 import "./heySection.scss"
-function HeySection() {
+
+const HeySection = () => {
   return (
     <div className="hey-container">
       <video src="../../../static/vid.mp4" autoPlay loop muted />

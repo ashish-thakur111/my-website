@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 
 import "./location.scss"
 
-const Location = props => {
+const Location = (props) => {
   const position = [
     parseFloat(props.address.lat),
     parseFloat(props.address.lng),

@@ -6,7 +6,7 @@ import HeySection from "../components/heySection/heySection"
 import Location from "../components/location/location"
 import Svg from "../../static/svg-1.svg"
 
-import indexStyles from "./index.module.scss"
+import * as indexStyles from "./index.module.scss"
 
 const IndexPage = () => {
   return (
@@ -19,7 +19,7 @@ const IndexPage = () => {
         </div>
         <div className={indexStyles.ash}>
           Tech Stack
-          <ul>
+          <ul className="tranform">
             <li>Java</li>
             <li>Kubernetes</li>
             <li>Linux</li>
@@ -28,7 +28,6 @@ const IndexPage = () => {
       </div>
       <Location
         address={{ lat: 32.06704, lng: 76.696158 }}
-        sty={indexStyles.map}
       />
     </Layout>
   )

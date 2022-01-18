@@ -4,7 +4,7 @@ import Header from "../header/header"
 import Footer from "../footer/footer"
 import "../../styles/index.scss"
 
-const Layout = props => {
+const Layout = (props) => {
   return (
     <div>
       <Header />

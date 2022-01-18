@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import SocialFollow from "../socialFollow/social"
 
-import footerStyles from "./footer.module.scss"
+import * as footerStyles from "./footer.module.scss"
 
-const Footer = props => {
+const Footer = (props) => {
   const data = useStaticQuery(graphql`
     query {
       site {
