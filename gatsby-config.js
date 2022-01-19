@@ -12,14 +12,8 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCCESS_TOKEN,
-      },
-    },
     "gatsby-plugin-sass",
+    'gatsby-plugin-image',
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -37,9 +31,12 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 750,
-              linkImagesToOriginal: false,
+              withWebp: true,
+              showCaptions: true,
+              quality: 60
             },
           },
+          "gatsby-remark-prismjs"
         ],
       },
     },

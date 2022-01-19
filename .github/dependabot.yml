@@ -30,10 +30,6 @@ updates:
     versions:
     - 1.32.7
     - 1.32.8
-  - dependency-name: gatsby-source-contentful
-    versions:
-    - 4.6.1
-    - 4.6.2
   - dependency-name: socket.io
     versions:
     - 2.4.1

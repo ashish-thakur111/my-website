@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import cardStyles from "./cardItem.module.scss"
+import * as cardStyles from "./cardItem.module.scss"
 
-function cardItem(props) {
+const CardItem = props => {
   return (
-    <>
-      <li className={cardStyles.cardsItem}>
+    <div className={cardStyles.wrapperDiv}>
+      <li>
         <Link className={cardStyles.cardsItemLink} to={props.path}>
           <figure
             className={cardStyles.cardsItemPicWrap}
@@ -23,8 +23,8 @@ function cardItem(props) {
           </div>
         </Link>
       </li>
-    </>
+    </div>
   )
 }
 
-export default cardItem
+export default CardItem

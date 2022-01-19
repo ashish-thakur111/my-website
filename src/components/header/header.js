@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
-import headerStyles from "./header.module.scss"
+import * as headerStyles from "./header.module.scss"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -58,7 +58,7 @@ const Header = () => {
               : { visibility: "visible" }
           }
         >
-          <ul>
+          <ul className="tranform">
             <li>
               <Link
                 to="/"
