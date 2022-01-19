@@ -29,9 +29,6 @@ jobs:
         run: npm ci
 
       - name: Create a production build
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCCESS_TOKEN }}
         run: npm run build
 
       - name: Pushes to github pages repository
