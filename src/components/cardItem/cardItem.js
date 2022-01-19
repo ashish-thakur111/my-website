@@ -5,7 +5,7 @@ import * as cardStyles from "./cardItem.module.scss"
 const CardItem = props => {
   return (
     <div className={cardStyles.wrapperDiv}>
-      <li className={cardStyles.cardsItem}>
+      <li>
         <Link className={cardStyles.cardsItemLink} to={props.path}>
           <figure
             className={cardStyles.cardsItemPicWrap}

@@ -7,15 +7,6 @@ h1 {
     text-align: center;
 }
 
-.cards-container {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    max-width: 1120px;
-    width: 90%;
-    margin: 0;
-}
-
 .cards-wrapper {
     position: relative;
     margin: 50px 0 45px;
@@ -23,14 +14,14 @@ h1 {
 
 .cards-items {
     margin-bottom: 24px;
-}
-
-.cards-item {
     display: flex;
-    flex: 1;
-    margin: 0 1rem;
-    object-fit: contain;
-    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 180px;
 }
 
 .cards-item-link {
@@ -109,18 +100,15 @@ h1 {
     object-fit: contain;
 }
 
-@media only screen and (min-width: 1200px) {
-    .content-blog-container {
-        width: 84%;
-    }
-}
 
-@media only screen and (min-width: 1024px) {
+@media (max-width: 768px) {
     .cards-items {
-        display: flex;
-        flex-flow: row;
+        flex-flow: column;
+        margin-left: 0px;
+        padding-left: 3rem;
     }
-    .cards-item {
-        margin-bottom: 2rem;
+    .wrapper-div {
+        width: 50vw;
+        height: 60vh;
     }
 }

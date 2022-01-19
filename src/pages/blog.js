@@ -44,7 +44,7 @@ const BlogPage = () => {
           </a>
         </h3>
       </div>
-      <div className={(cardStyles.cardsContainer, blogStyles.cardContainer)}>
+      <div>
         <ul className={cardStyles.cardsItems}>
           {data.allMarkdownRemark.edges.map(edge => {
             return (
