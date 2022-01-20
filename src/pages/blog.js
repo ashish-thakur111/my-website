@@ -16,7 +16,9 @@ const BlogPage = () => {
             frontmatter {
               date
               title
-              blogImage
+              blogImage {
+                publicUrl
+              }
             }
             excerpt
             fields {
@@ -27,6 +29,7 @@ const BlogPage = () => {
       }
     }
   `)
+
   return (
     <Layout>
       <Head title="Blog" />
@@ -49,7 +52,7 @@ const BlogPage = () => {
           {data.allMarkdownRemark.edges.map(edge => {
             return (
               <CardItem
-                src={edge.node.frontmatter.blogImage}
+                src={edge.node.frontmatter.blogImage.publicUrl}
                 key={edge.node.slug}
                 text={edge.node.excerpt}
                 label={edge.node.frontmatter.title}
