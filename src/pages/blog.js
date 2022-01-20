@@ -17,7 +17,7 @@ const BlogPage = () => {
               date
               title
               blogImage {
-                publicUrl
+                relativePath
               }
             }
             excerpt
@@ -52,7 +52,7 @@ const BlogPage = () => {
           {data.allMarkdownRemark.edges.map(edge => {
             return (
               <CardItem
-                src={edge.node.frontmatter.blogImage.publicUrl}
+                src={edge.node.frontmatter.blogImage.relativePath}
                 key={edge.node.slug}
                 text={edge.node.excerpt}
                 label={edge.node.frontmatter.title}
