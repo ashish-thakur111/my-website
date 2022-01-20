@@ -1,7 +1,7 @@
 ---
 title: "A Sample post"
 date: "2021-02-03"
-blogImage: "grass.png"
+blogImage: "./grass.png"
 ---
 
 It is my test post!
