@@ -21,6 +21,13 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "static",
+        path: `${__dirname}/static/`,
+      },
+    },
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",
