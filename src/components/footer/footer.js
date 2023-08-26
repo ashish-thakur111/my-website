@@ -25,7 +25,7 @@ const Footer = (props) => {
       }
     >
       <div>
-        Created by {data.site.siteMetadata.description}, &copy; 2021
+        Created by {data.site.siteMetadata.description}, &copy; 2023
         <SocialFollow />
       </div>
     </footer>
